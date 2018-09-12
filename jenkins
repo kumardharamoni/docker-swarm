@@ -17,11 +17,11 @@ node ('slave-1') {
     stage('Push Image') {
             docker.withRegistry('https://registry.hub.docker.com', 'd4b2f9dc-6776-4998-b97a-107118672b8e') {
             echo "${env.BUILD_NUMBER}"
-            sh "docker tag  dkumar123/httpd  dkumar123/webb-swarm:${env.BUILD_NUMBER} "
-            sh "docker push  dkumar123/webb-swarm:${env.BUILD_NUMBER}"
+            sh "docker tag  dkumar123/httpd  dkumar123/web-http-swarm:${env.BUILD_NUMBER} "
+            sh "docker push  dkumar123/web-http-swarm:${env.BUILD_NUMBER}"
            }
    }
     stage('Deploy ') {  
-        /*    sh " docker srevice create --name web -p 9089:80  docker pull dkumar123/httpd:${env.BUILD_NUMBER}"  */
+        /*    sh " docker srevice create --name web -p 9089:80  docker pull dkumar123/web-http-swarm:${env.BUILD_NUMBER}"  */
          }
    }
