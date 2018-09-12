@@ -12,9 +12,9 @@ node ('slave-1') {
         * docker build on the command line. */
             sh "hostname"
             echo "${env.BUILD_NUMBER}"
-            sh 'docker build -t dharamoni1239/website-test -f web-http .'
+            sh 'docker build -t dkumar123/website-test -f web-http .'
             echo "${env.BUILD_NUMBER}"
-            sh "docker tag dkumar123/website-test dkumar/website-test:${env.BUILD_NUMBER} "
+            sh "docker tag dkumar123/website-test dkumar123/website-test:${env.BUILD_NUMBER} "
             
    }
    stage('Push Image') {
