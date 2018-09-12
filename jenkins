@@ -15,8 +15,7 @@ node ('slave-1') {
             sh 'docker build -t dharamoni1239/website-test -f web-http .'
             echo "${env.BUILD_NUMBER}"
             sh "docker tag dkumar123/website-test dkumar/website-test:${env.BUILD_NUMBER} "
-            pwd 
-            sh "hostname"
+            
    }
    stage('Push Image') {
            withDockerRegistry([ credentialsId: "d4b2f9dc-6776-4998-b97a-107118672b8e", url: "" ])
