@@ -27,5 +27,8 @@ node ('slave-1') {
   }
    stage('Deploy ') {  
           sh " docker srevice create --name web -p 9089:80  dkumar123/website-test:${env.BUILD_NUMBER}"  
+          echo "dkumar123/website-test:${env.BUILD_NUMBER}"
+                     sh " sed -i 's/website-test/website-test:${env.BUILD_NUMBER}/g' docker-stack.yml"
+                    sh "docker stack deploy -c docker-stack.yml website"
         }
   }
