@@ -18,7 +18,7 @@ node ('docker-master.com') {
             
    }
    stage('Push Image') {
-           withDockerRegistry([ credentialsId: "cd1022da-5573-44e7-9d73-496b03818438", url: "" ])
+           withDockerRegistry([ credentialsId: "5441641b-dd7a-4058-889a-a903ae261617", url: "" ])
           /* docker.withRegistry('https://registry.hub.docker.com', '	28da3b3f-c721-4c04-b7c1-76ab88ac7c16') */ {
            echo "${env.BUILD_NUMBER}"
            sh "docker tag dkumar123/website-test dkumar123/website-test:${env.BUILD_NUMBER} "
