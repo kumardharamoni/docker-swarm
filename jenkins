@@ -1,4 +1,4 @@
-node ('swarm-master') {
+node ('docker-master.com') {
    def app
 
    stage('Clone repository') {
